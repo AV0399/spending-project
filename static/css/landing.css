@@ -1,0 +1,251 @@
+/* ------------------------------------------------------------------ */
+/* Landing page — hero overrides                                       */
+/* ------------------------------------------------------------------ */
+
+:root {
+    --teal: #0d9488;
+    --teal-light: #e6f7f6;
+}
+
+/* Reset the base hero grid to a centred column */
+section.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5rem 2rem 4rem;
+    max-width: 100%;
+    margin: 0;
+    gap: 3rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero copy block                                                      */
+/* ------------------------------------------------------------------ */
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 680px;
+}
+
+/* Badge */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--teal-light);
+    color: var(--teal);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+    animation: dot-pulse 2s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+    0%, 100% { opacity: 1;   transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.75); }
+}
+
+/* Headline */
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+    font-style: normal;
+}
+
+.hero-title-teal {
+    color: var(--teal);
+    font-style: italic;
+}
+
+/* Subtext */
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+    line-height: 1.75;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* CTA buttons */
+.hero-actions {
+    display: flex;
+    gap: 0.875rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-hero {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-hero:hover { background: var(--teal); }
+
+/* ------------------------------------------------------------------ */
+/* App preview frame                                                   */
+/* ------------------------------------------------------------------ */
+
+.app-preview {
+    width: 100%;
+    max-width: 820px;
+    background: var(--paper-warm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.08);
+    animation: preview-float 5s ease-in-out infinite;
+}
+
+@keyframes preview-float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+}
+
+/* Traffic-light title bar */
+.app-preview-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.875rem 1.25rem;
+    background: var(--border-soft);
+    border-bottom: 1px solid var(--border);
+}
+
+.traffic-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.td-red    { background: #ff5f57; }
+.td-yellow { background: #febc2e; }
+.td-green  { background: #28c840; }
+
+/* Body */
+.app-preview-body { padding: 1.5rem; }
+
+/* Stat cards row */
+.preview-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.preview-stat-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-align: left;
+}
+
+.pstat-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.pstat-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--ink);
+}
+
+.pstat-teal { color: var(--teal); }
+
+/* Bar chart */
+.preview-chart {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chart-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 64px;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.chart-cat {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-align: left;
+}
+
+.chart-track {
+    height: 8px;
+    background: var(--border-soft);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.chart-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+}
+
+@keyframes grow-72 { to { width: 72%; } }
+@keyframes grow-52 { to { width: 52%; } }
+@keyframes grow-33 { to { width: 33%; } }
+@keyframes grow-28 { to { width: 28%; } }
+
+.cb-1 { background: var(--teal);     animation: grow-72 1s 0.3s  ease both; }
+.cb-2 { background: var(--accent-2); animation: grow-52 1s 0.5s  ease both; }
+.cb-3 { background: #5b7fa6;         animation: grow-33 1s 0.65s ease both; }
+.cb-4 { background: #8b5e83;         animation: grow-28 1s 0.8s  ease both; }
+
+.chart-amt {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    text-align: right;
+}
+
+/* ------------------------------------------------------------------ */
+/* Responsive                                                          */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 600px) {
+    .preview-stats { grid-template-columns: 1fr 1fr; }
+    .preview-stats .preview-stat-card:last-child { grid-column: span 2; }
+    .chart-row { grid-template-columns: 60px 1fr 52px; }
+}
